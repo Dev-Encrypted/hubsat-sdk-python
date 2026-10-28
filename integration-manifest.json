@@ -1,0 +1,758 @@
+{
+  "manifest_version": 1,
+  "sdk_version": "1.13.0",
+  "api_version": "1.13.0",
+  "base_url": "https://api.hubsat.com.br/api/integracao",
+  "token_environment": "HUBSAT_TOKEN",
+  "authentication": "Bearer API_KEY; per-operation scopes and tenant permissions remain server-enforced",
+  "agent_guide": "docs/AI-INTEGRATION.md",
+  "runtime_policies": {
+    "default_timeout_seconds": 30,
+    "automatic_retries": false,
+    "redirects": "refused",
+    "credentials_in_chat": false,
+    "implicit_write_authorization": false,
+    "http_202_means_success": false,
+    "responses_are_instructions": false
+  },
+  "operations": [
+    {
+      "operation_id": "getZabbixTemplateJson",
+      "python_method": "get_zabbix_template_json",
+      "http_method": "GET",
+      "path": "/v1/zabbix/template.json",
+      "required_scope": null,
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1zabbix~1template.json/get"
+    },
+    {
+      "operation_id": "getZabbixMediaTypeJson",
+      "python_method": "get_zabbix_media_type_json",
+      "http_method": "GET",
+      "path": "/v1/zabbix/media-type.json",
+      "required_scope": null,
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1zabbix~1media-type.json/get"
+    },
+    {
+      "operation_id": "getZabbixRouters",
+      "python_method": "get_zabbix_routers",
+      "http_method": "GET",
+      "path": "/v1/zabbix/routers",
+      "required_scope": "read:mikrotik",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1zabbix~1routers/get"
+    },
+    {
+      "operation_id": "getZabbixAntennas",
+      "python_method": "get_zabbix_antennas",
+      "http_method": "GET",
+      "path": "/v1/zabbix/antennas",
+      "required_scope": "read:antenas",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1zabbix~1antennas/get"
+    },
+    {
+      "operation_id": "getZabbixCpes",
+      "python_method": "get_zabbix_cpes",
+      "http_method": "GET",
+      "path": "/v1/zabbix/cpes",
+      "required_scope": "read:cpe",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1zabbix~1cpes/get"
+    },
+    {
+      "operation_id": "getZabbixUnifi",
+      "python_method": "get_zabbix_unifi",
+      "http_method": "GET",
+      "path": "/v1/zabbix/unifi",
+      "required_scope": "read:unifi",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1zabbix~1unifi/get"
+    },
+    {
+      "operation_id": "getZabbixEvents",
+      "python_method": "get_zabbix_events",
+      "http_method": "GET",
+      "path": "/v1/zabbix/events",
+      "required_scope": "read:zabbix",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1zabbix~1events/get"
+    },
+    {
+      "operation_id": "postZabbixEvents",
+      "python_method": "post_zabbix_events",
+      "http_method": "POST",
+      "path": "/v1/zabbix/events",
+      "required_scope": "write:zabbix",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1zabbix~1events/post"
+    },
+    {
+      "operation_id": "getOpenapiJson",
+      "python_method": "get_openapi_json",
+      "http_method": "GET",
+      "path": "/v1/openapi.json",
+      "required_scope": null,
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1openapi.json/get"
+    },
+    {
+      "operation_id": "getAntenas",
+      "python_method": "get_antenas",
+      "http_method": "GET",
+      "path": "/v1/antenas",
+      "required_scope": "read:antenas",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1antenas/get"
+    },
+    {
+      "operation_id": "getAntenasByAntenaId",
+      "python_method": "get_antenas_by_antena_id",
+      "http_method": "GET",
+      "path": "/v1/antenas/{antenaId}",
+      "required_scope": "read:antenas",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1antenas~1{antenaId}/get"
+    },
+    {
+      "operation_id": "getAntenasByAntenaIdFranquia",
+      "python_method": "get_antenas_by_antena_id_franquia",
+      "http_method": "GET",
+      "path": "/v1/antenas/{antenaId}/franquia",
+      "required_scope": "read:antenas",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1antenas~1{antenaId}~1franquia/get"
+    },
+    {
+      "operation_id": "getAssinantes",
+      "python_method": "get_assinantes",
+      "http_method": "GET",
+      "path": "/v1/assinantes",
+      "required_scope": "read:assinantes",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1assinantes/get"
+    },
+    {
+      "operation_id": "criarAssinanteCadastro",
+      "python_method": "criar_assinante_cadastro",
+      "http_method": "POST",
+      "path": "/v1/assinantes",
+      "required_scope": "write:assinantes_cadastro",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1assinantes/post"
+    },
+    {
+      "operation_id": "getAssinantesByAssinanteId",
+      "python_method": "get_assinantes_by_assinante_id",
+      "http_method": "GET",
+      "path": "/v1/assinantes/{assinanteId}",
+      "required_scope": "read:assinantes",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1assinantes~1{assinanteId}/get"
+    },
+    {
+      "operation_id": "patchAssinantesByAssinanteId",
+      "python_method": "patch_assinantes_by_assinante_id",
+      "http_method": "PATCH",
+      "path": "/v1/assinantes/{assinanteId}",
+      "required_scope": "write:assinantes",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1assinantes~1{assinanteId}/patch"
+    },
+    {
+      "operation_id": "getMikrotikRoteadores",
+      "python_method": "get_mikrotik_roteadores",
+      "http_method": "GET",
+      "path": "/v1/mikrotik/roteadores",
+      "required_scope": "read:mikrotik",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1mikrotik~1roteadores/get"
+    },
+    {
+      "operation_id": "getMikrotikRoteadoresByPublicId",
+      "python_method": "get_mikrotik_roteadores_by_public_id",
+      "http_method": "GET",
+      "path": "/v1/mikrotik/roteadores/{publicId}",
+      "required_scope": "read:mikrotik",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1mikrotik~1roteadores~1{publicId}/get"
+    },
+    {
+      "operation_id": "getFinanceiroFaturas",
+      "python_method": "get_financeiro_faturas",
+      "http_method": "GET",
+      "path": "/v1/financeiro/faturas",
+      "required_scope": "read:financeiro",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1financeiro~1faturas/get"
+    },
+    {
+      "operation_id": "getFinanceiroFaturasByFaturaId",
+      "python_method": "get_financeiro_faturas_by_fatura_id",
+      "http_method": "GET",
+      "path": "/v1/financeiro/faturas/{faturaId}",
+      "required_scope": "read:financeiro",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1financeiro~1faturas~1{faturaId}/get"
+    },
+    {
+      "operation_id": "getFinanceiroContasByContaIdSaldo",
+      "python_method": "get_financeiro_contas_by_conta_id_saldo",
+      "http_method": "GET",
+      "path": "/v1/financeiro/contas/{contaId}/saldo",
+      "required_scope": "read:financeiro",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1financeiro~1contas~1{contaId}~1saldo/get"
+    },
+    {
+      "operation_id": "getCobrancas",
+      "python_method": "get_cobrancas",
+      "http_method": "GET",
+      "path": "/v1/cobrancas",
+      "required_scope": "read:cobrancas",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1cobrancas/get"
+    },
+    {
+      "operation_id": "emitirCobranca",
+      "python_method": "emitir_cobranca",
+      "http_method": "POST",
+      "path": "/v1/cobrancas",
+      "required_scope": "write:cobrancas",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1cobrancas/post"
+    },
+    {
+      "operation_id": "getCobrancasByCobrancaId",
+      "python_method": "get_cobrancas_by_cobranca_id",
+      "http_method": "GET",
+      "path": "/v1/cobrancas/{cobrancaId}",
+      "required_scope": "read:cobrancas",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1cobrancas~1{cobrancaId}/get"
+    },
+    {
+      "operation_id": "getAlertas",
+      "python_method": "get_alertas",
+      "http_method": "GET",
+      "path": "/v1/alertas",
+      "required_scope": "read:alertas",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1alertas/get"
+    },
+    {
+      "operation_id": "getAlugueis",
+      "python_method": "get_alugueis",
+      "http_method": "GET",
+      "path": "/v1/alugueis",
+      "required_scope": "read:alugueis",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1alugueis/get"
+    },
+    {
+      "operation_id": "getAlugueisByAluguelId",
+      "python_method": "get_alugueis_by_aluguel_id",
+      "http_method": "GET",
+      "path": "/v1/alugueis/{aluguelId}",
+      "required_scope": "read:alugueis",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1alugueis~1{aluguelId}/get"
+    },
+    {
+      "operation_id": "getEstoqueItens",
+      "python_method": "get_estoque_itens",
+      "http_method": "GET",
+      "path": "/v1/estoque/itens",
+      "required_scope": "read:estoque",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1estoque~1itens/get"
+    },
+    {
+      "operation_id": "getEstoqueItensByItemId",
+      "python_method": "get_estoque_itens_by_item_id",
+      "http_method": "GET",
+      "path": "/v1/estoque/itens/{itemId}",
+      "required_scope": "read:estoque",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1estoque~1itens~1{itemId}/get"
+    },
+    {
+      "operation_id": "getGuestWifiRouters",
+      "python_method": "get_guest_wifi_routers",
+      "http_method": "GET",
+      "path": "/v1/guest-wifi/routers",
+      "required_scope": "read:guest_wifi",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1guest-wifi~1routers/get"
+    },
+    {
+      "operation_id": "getGuestWifiRoutersByRouterIdReport",
+      "python_method": "get_guest_wifi_routers_by_router_id_report",
+      "http_method": "GET",
+      "path": "/v1/guest-wifi/routers/{routerId}/report",
+      "required_scope": "read:guest_wifi",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1guest-wifi~1routers~1{routerId}~1report/get"
+    },
+    {
+      "operation_id": "getGuestWifiRoutersByRouterIdEntitlements",
+      "python_method": "get_guest_wifi_routers_by_router_id_entitlements",
+      "http_method": "GET",
+      "path": "/v1/guest-wifi/routers/{routerId}/entitlements",
+      "required_scope": "read:guest_wifi",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1guest-wifi~1routers~1{routerId}~1entitlements/get"
+    },
+    {
+      "operation_id": "getGuestWifiRoutersByRouterIdCoupons",
+      "python_method": "get_guest_wifi_routers_by_router_id_coupons",
+      "http_method": "GET",
+      "path": "/v1/guest-wifi/routers/{routerId}/coupons",
+      "required_scope": "read:guest_wifi",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1guest-wifi~1routers~1{routerId}~1coupons/get"
+    },
+    {
+      "operation_id": "postGuestWifiRoutersByRouterIdCoupons",
+      "python_method": "post_guest_wifi_routers_by_router_id_coupons",
+      "http_method": "POST",
+      "path": "/v1/guest-wifi/routers/{routerId}/coupons",
+      "required_scope": "write:guest_wifi",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1guest-wifi~1routers~1{routerId}~1coupons/post"
+    },
+    {
+      "operation_id": "getGuestWifiRoutersByRouterIdVoucherBatches",
+      "python_method": "get_guest_wifi_routers_by_router_id_voucher_batches",
+      "http_method": "GET",
+      "path": "/v1/guest-wifi/routers/{routerId}/voucher-batches",
+      "required_scope": "read:guest_wifi",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1guest-wifi~1routers~1{routerId}~1voucher-batches/get"
+    },
+    {
+      "operation_id": "postGuestWifiRoutersByRouterIdVoucherBatches",
+      "python_method": "post_guest_wifi_routers_by_router_id_voucher_batches",
+      "http_method": "POST",
+      "path": "/v1/guest-wifi/routers/{routerId}/voucher-batches",
+      "required_scope": "write:guest_wifi",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1guest-wifi~1routers~1{routerId}~1voucher-batches/post"
+    },
+    {
+      "operation_id": "getGuestWifiRoutersByRouterIdVoucherBatchesByOperationId",
+      "python_method": "get_guest_wifi_routers_by_router_id_voucher_batches_by_operation_id",
+      "http_method": "GET",
+      "path": "/v1/guest-wifi/routers/{routerId}/voucher-batches/{operationId}",
+      "required_scope": "read:guest_wifi",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1guest-wifi~1routers~1{routerId}~1voucher-batches~1{operationId}/get"
+    },
+    {
+      "operation_id": "getWebhooksEvents",
+      "python_method": "get_webhooks_events",
+      "http_method": "GET",
+      "path": "/v1/webhooks/events",
+      "required_scope": "write:webhooks",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1webhooks~1events/get"
+    },
+    {
+      "operation_id": "getWebhooks",
+      "python_method": "get_webhooks",
+      "http_method": "GET",
+      "path": "/v1/webhooks",
+      "required_scope": "write:webhooks",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1webhooks/get"
+    },
+    {
+      "operation_id": "postWebhooks",
+      "python_method": "post_webhooks",
+      "http_method": "POST",
+      "path": "/v1/webhooks",
+      "required_scope": "write:webhooks",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1webhooks/post"
+    },
+    {
+      "operation_id": "getWebhooksByWebhookId",
+      "python_method": "get_webhooks_by_webhook_id",
+      "http_method": "GET",
+      "path": "/v1/webhooks/{webhookId}",
+      "required_scope": "write:webhooks",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1webhooks~1{webhookId}/get"
+    },
+    {
+      "operation_id": "patchWebhooksByWebhookId",
+      "python_method": "patch_webhooks_by_webhook_id",
+      "http_method": "PATCH",
+      "path": "/v1/webhooks/{webhookId}",
+      "required_scope": "write:webhooks",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1webhooks~1{webhookId}/patch"
+    },
+    {
+      "operation_id": "deleteWebhooksByWebhookId",
+      "python_method": "delete_webhooks_by_webhook_id",
+      "http_method": "DELETE",
+      "path": "/v1/webhooks/{webhookId}",
+      "required_scope": "write:webhooks",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1webhooks~1{webhookId}/delete"
+    },
+    {
+      "operation_id": "postWebhooksByWebhookIdTest",
+      "python_method": "post_webhooks_by_webhook_id_test",
+      "http_method": "POST",
+      "path": "/v1/webhooks/{webhookId}/test",
+      "required_scope": "write:webhooks",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1webhooks~1{webhookId}~1test/post"
+    },
+    {
+      "operation_id": "getWebhooksByWebhookIdDeliveries",
+      "python_method": "get_webhooks_by_webhook_id_deliveries",
+      "http_method": "GET",
+      "path": "/v1/webhooks/{webhookId}/deliveries",
+      "required_scope": "write:webhooks",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1webhooks~1{webhookId}~1deliveries/get"
+    },
+    {
+      "operation_id": "postWebhooksByWebhookIdDeliveriesByDeliveryIdRedeliver",
+      "python_method": "post_webhooks_by_webhook_id_deliveries_by_delivery_id_redeliver",
+      "http_method": "POST",
+      "path": "/v1/webhooks/{webhookId}/deliveries/{deliveryId}/redeliver",
+      "required_scope": "write:webhooks",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1webhooks~1{webhookId}~1deliveries~1{deliveryId}~1redeliver/post"
+    },
+    {
+      "operation_id": "listarExportacoesFinanceiras",
+      "python_method": "listar_exportacoes_financeiras",
+      "http_method": "GET",
+      "path": "/v1/relatorios/exportacoes",
+      "required_scope": "read:financeiro",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1relatorios~1exportacoes/get"
+    },
+    {
+      "operation_id": "solicitarExportacaoFinanceira",
+      "python_method": "solicitar_exportacao_financeira",
+      "http_method": "POST",
+      "path": "/v1/relatorios/exportacoes",
+      "required_scope": "write:exportacoes",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1relatorios~1exportacoes/post"
+    },
+    {
+      "operation_id": "consultarExportacaoFinanceira",
+      "python_method": "consultar_exportacao_financeira",
+      "http_method": "GET",
+      "path": "/v1/relatorios/exportacoes/{exportId}",
+      "required_scope": "read:financeiro",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1relatorios~1exportacoes~1{exportId}/get"
+    },
+    {
+      "operation_id": "baixarExportacaoFinanceira",
+      "python_method": "baixar_exportacao_financeira",
+      "http_method": "GET",
+      "path": "/v1/relatorios/exportacoes/{exportId}/download",
+      "required_scope": "read:financeiro",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1relatorios~1exportacoes~1{exportId}~1download/get"
+    },
+    {
+      "operation_id": "resolverAlertaAntena",
+      "python_method": "resolver_alerta_antena",
+      "http_method": "POST",
+      "path": "/v1/alertas/antena/{alertaId}/resolver",
+      "required_scope": "write:alertas",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1alertas~1antena~1{alertaId}~1resolver/post"
+    },
+    {
+      "operation_id": "getStarlinkContas",
+      "python_method": "get_starlink_contas",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas/get"
+    },
+    {
+      "operation_id": "getStarlinkContasByContaId",
+      "python_method": "get_starlink_contas_by_conta_id",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}/get"
+    },
+    {
+      "operation_id": "getStarlinkContasByContaIdAntenas",
+      "python_method": "get_starlink_contas_by_conta_id_antenas",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}/antenas",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1antenas/get"
+    },
+    {
+      "operation_id": "getStarlinkContasByContaIdFaturas",
+      "python_method": "get_starlink_contas_by_conta_id_faturas",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}/faturas",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1faturas/get"
+    },
+    {
+      "operation_id": "getStarlinkContasByContaIdPagamentos",
+      "python_method": "get_starlink_contas_by_conta_id_pagamentos",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}/pagamentos",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1pagamentos/get"
+    },
+    {
+      "operation_id": "getStarlinkContasByContaIdCreditos",
+      "python_method": "get_starlink_contas_by_conta_id_creditos",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}/creditos",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1creditos/get"
+    },
+    {
+      "operation_id": "getStarlinkContasByContaIdPlanos",
+      "python_method": "get_starlink_contas_by_conta_id_planos",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}/planos",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1planos/get"
+    },
+    {
+      "operation_id": "getStarlinkContasByContaIdHistorico",
+      "python_method": "get_starlink_contas_by_conta_id_historico",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}/historico",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1historico/get"
+    },
+    {
+      "operation_id": "getStarlinkAntenasByAntenaId",
+      "python_method": "get_starlink_antenas_by_antena_id",
+      "http_method": "GET",
+      "path": "/v1/starlink/antenas/{antenaId}",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1antenas~1{antenaId}/get"
+    },
+    {
+      "operation_id": "getStarlinkAntenasByAntenaIdRoteadores",
+      "python_method": "get_starlink_antenas_by_antena_id_roteadores",
+      "http_method": "GET",
+      "path": "/v1/starlink/antenas/{antenaId}/roteadores",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1antenas~1{antenaId}~1roteadores/get"
+    },
+    {
+      "operation_id": "getStarlinkAntenasByAntenaIdConsumoDiario",
+      "python_method": "get_starlink_antenas_by_antena_id_consumo_diario",
+      "http_method": "GET",
+      "path": "/v1/starlink/antenas/{antenaId}/consumo-diario",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1antenas~1{antenaId}~1consumo-diario/get"
+    },
+    {
+      "operation_id": "getStarlinkAntenasByAntenaIdRoteadoresByRouterIdDispositivos",
+      "python_method": "get_starlink_antenas_by_antena_id_roteadores_by_router_id_dispositivos",
+      "http_method": "GET",
+      "path": "/v1/starlink/antenas/{antenaId}/roteadores/{routerId}/dispositivos",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1antenas~1{antenaId}~1roteadores~1{routerId}~1dispositivos/get"
+    },
+    {
+      "operation_id": "getStarlinkContasByContaIdFaturasByInvoiceNumberDocumentosByDocumentType",
+      "python_method": "get_starlink_contas_by_conta_id_faturas_by_invoice_number_documentos_by_document_type",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}/faturas/{invoiceNumber}/documentos/{documentType}",
+      "required_scope": "read:starlink_documentos",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1faturas~1{invoiceNumber}~1documentos~1{documentType}/get"
+    },
+    {
+      "operation_id": "getStarlinkContasByContaIdFaturasByInvoiceNumber",
+      "python_method": "get_starlink_contas_by_conta_id_faturas_by_invoice_number",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}/faturas/{invoiceNumber}",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1faturas~1{invoiceNumber}/get"
+    },
+    {
+      "operation_id": "getEmailCaixas",
+      "python_method": "get_email_caixas",
+      "http_method": "GET",
+      "path": "/v1/email/caixas",
+      "required_scope": "read:email",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1email~1caixas/get"
+    },
+    {
+      "operation_id": "getEmailCaixasByCaixaIdPastas",
+      "python_method": "get_email_caixas_by_caixa_id_pastas",
+      "http_method": "GET",
+      "path": "/v1/email/caixas/{caixaId}/pastas",
+      "required_scope": "read:email",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1email~1caixas~1{caixaId}~1pastas/get"
+    },
+    {
+      "operation_id": "getEmailCaixasByCaixaIdMensagens",
+      "python_method": "get_email_caixas_by_caixa_id_mensagens",
+      "http_method": "GET",
+      "path": "/v1/email/caixas/{caixaId}/mensagens",
+      "required_scope": "read:email",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1email~1caixas~1{caixaId}~1mensagens/get"
+    },
+    {
+      "operation_id": "getEmailCaixasByCaixaIdMensagensByUid",
+      "python_method": "get_email_caixas_by_caixa_id_mensagens_by_uid",
+      "http_method": "GET",
+      "path": "/v1/email/caixas/{caixaId}/mensagens/{uid}",
+      "required_scope": "read:email_conteudo",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1email~1caixas~1{caixaId}~1mensagens~1{uid}/get"
+    },
+    {
+      "operation_id": "getEmailCaixasByCaixaIdMensagensByUidAnexosByIndex",
+      "python_method": "get_email_caixas_by_caixa_id_mensagens_by_uid_anexos_by_index",
+      "http_method": "GET",
+      "path": "/v1/email/caixas/{caixaId}/mensagens/{uid}/anexos/{index}",
+      "required_scope": "read:email_conteudo",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1email~1caixas~1{caixaId}~1mensagens~1{uid}~1anexos~1{index}/get"
+    },
+    {
+      "operation_id": "getStarlinkPaymentContext",
+      "python_method": "get_starlink_payment_context",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}/pagamentos/contexto",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1pagamentos~1contexto/get"
+    },
+    {
+      "operation_id": "createStarlinkCardPayment",
+      "python_method": "create_starlink_card_payment",
+      "http_method": "POST",
+      "path": "/v1/starlink/contas/{contaId}/pagamentos/cartao",
+      "required_scope": "write:starlink_pagamentos",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1pagamentos~1cartao/post"
+    },
+    {
+      "operation_id": "createStarlinkPixPayment",
+      "python_method": "create_starlink_pix_payment",
+      "http_method": "POST",
+      "path": "/v1/starlink/contas/{contaId}/pagamentos/pix",
+      "required_scope": "write:starlink_pagamentos",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1pagamentos~1pix/post"
+    },
+    {
+      "operation_id": "getStarlinkPaymentAttempt",
+      "python_method": "get_starlink_payment_attempt",
+      "http_method": "GET",
+      "path": "/v1/starlink/contas/{contaId}/pagamentos/{method}/tentativas/{idempotencyKey}",
+      "required_scope": "read:starlink",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1starlink~1contas~1{contaId}~1pagamentos~1{method}~1tentativas~1{idempotencyKey}/get"
+    },
+    {
+      "operation_id": "getMikrotikActionContext",
+      "python_method": "get_mikrotik_action_context",
+      "http_method": "GET",
+      "path": "/v1/mikrotik/roteadores/{publicId}/acoes/contexto",
+      "required_scope": "read:mikrotik",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1mikrotik~1roteadores~1{publicId}~1acoes~1contexto/get"
+    },
+    {
+      "operation_id": "createMikrotikPublicAction",
+      "python_method": "create_mikrotik_public_action",
+      "http_method": "POST",
+      "path": "/v1/mikrotik/roteadores/{publicId}/acoes",
+      "required_scope": "write:mikrotik_acoes",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1mikrotik~1roteadores~1{publicId}~1acoes/post"
+    },
+    {
+      "operation_id": "getMikrotikPublicAction",
+      "python_method": "get_mikrotik_public_action",
+      "http_method": "GET",
+      "path": "/v1/mikrotik/roteadores/{publicId}/acoes/{acaoId}",
+      "required_scope": "read:mikrotik",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1mikrotik~1roteadores~1{publicId}~1acoes~1{acaoId}/get"
+    },
+    {
+      "operation_id": "consultarAssinanteCadastro",
+      "python_method": "consultar_assinante_cadastro",
+      "http_method": "GET",
+      "path": "/v1/assinantes/{assinanteId}/cadastro",
+      "required_scope": "read:assinantes_cadastro",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1assinantes~1{assinanteId}~1cadastro/get"
+    },
+    {
+      "operation_id": "atualizarAssinanteCadastro",
+      "python_method": "atualizar_assinante_cadastro",
+      "http_method": "PATCH",
+      "path": "/v1/assinantes/{assinanteId}/cadastro",
+      "required_scope": "write:assinantes_cadastro",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1assinantes~1{assinanteId}~1cadastro/patch"
+    },
+    {
+      "operation_id": "baixarCobranca",
+      "python_method": "baixar_cobranca",
+      "http_method": "POST",
+      "path": "/v1/cobrancas/{cobrancaId}/baixar",
+      "required_scope": "write:cobrancas",
+      "requires_write_authorization": true,
+      "contract": "docs/openapi.json#/paths/~1v1~1cobrancas~1{cobrancaId}~1baixar/post"
+    },
+    {
+      "operation_id": "listarPlanosGuestWifi",
+      "python_method": "listar_planos_guest_wifi",
+      "http_method": "GET",
+      "path": "/v1/guest-wifi/routers/{routerId}/plans",
+      "required_scope": "read:guest_wifi",
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1guest-wifi~1routers~1{routerId}~1plans/get"
+    },
+    {
+      "operation_id": "consultarContextoToken",
+      "python_method": "consultar_contexto_token",
+      "http_method": "GET",
+      "path": "/v1/token/contexto",
+      "required_scope": null,
+      "requires_write_authorization": false,
+      "contract": "docs/openapi.json#/paths/~1v1~1token~1contexto/get"
+    }
+  ]
+}

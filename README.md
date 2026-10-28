@@ -98,6 +98,8 @@ Veja [paginação, downloads, ETag, escrita e solução de problemas](docs/usage
 
 ## SDK, MCP e versões
 
+Para agentes de IA: [guia de integração](docs/AI-INTEGRATION.md), [AGENTS.md](AGENTS.md), [manifesto de operações e políticas](integration-manifest.json) e [llms.txt](llms.txt). Esses materiais explicam descoberta, escopos, leituras limitadas, confirmação de escritas, idempotência, jobs e tratamento seguro de respostas.
+
 O SDK é para programas Python que usam API_KEY. Para conectar ChatGPT ou outro assistente, siga o [guia MCP remoto](https://hubsat.com.br/desenvolvedores#api-mcp), com a URL e o OAuth publicados. Instalar este pacote não conecta o assistente automaticamente.
 
 Esta release acompanha a API **1.13.0**, verificada durante a preparação. Funcionalidades de versões futuras só entram em uma release compatível após publicação e testes. A API disponível no seu servidor é a referência; o pacote não habilita recursos ou módulos por conta própria. Este repositório contém somente o SDK e o contrato público, sem backend, frontend, credenciais ou dados de clientes.
