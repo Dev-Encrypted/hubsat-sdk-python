@@ -1,0 +1,13 @@
+{
+  "sdkVersion": "1.13.0",
+  "apiVersion": "1.13.0",
+  "operations": 82,
+  "contractUrl": "https://api.hubsat.com.br/api/integracao/v1/openapi.json",
+  "contractSha256": "3e2ef1e307a3d1489ad8e72d5a26f368f0b184c41df92e337ed76bd6ca0f22eb",
+  "requiresPython": ">=3.10",
+  "runtimeDependencies": [],
+  "snapshotSha256": "68a893298d88c64b2f315ac435577c04ac6986e3f1587cf1755cf7b81058d438",
+  "derivedMetadata": [
+    "x-sdks"
+  ]
+}

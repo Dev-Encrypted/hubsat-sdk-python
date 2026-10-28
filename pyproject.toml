@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hubsat-api"
+version = "1.13.0"
+description = "Cliente oficial da API de integração HubSat"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Homepage = "https://hubsat.com.br/desenvolvedores#api-sdk-python"
+Repository = "https://github.com/Dev-Encrypted/hubsat-sdk-python"
+Documentation = "https://github.com/Dev-Encrypted/hubsat-sdk-python/blob/main/README.md"
+Issues = "https://github.com/Dev-Encrypted/hubsat-sdk-python/issues"
+
+[tool.setuptools.package-data]
+hubsat_api = ["*.pyi", "py.typed"]
